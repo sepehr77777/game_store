@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# پروژه نمایش بازی‌ها - Next.js + RAWG API
 
-## Getting Started
+این پروژه یک وب‌سایت ساده با **Next.js 13** است که بازی‌ها را از **RAWG API** می‌گیرد و نمایش می‌دهد.
 
-First, run the development server:
+---
+
+## امکانات
+
+- نمایش لیست بازی‌ها از RAWG API
+- نمایش تصویر، نام، ژانر، پلتفرم و تاریخ انتشار بازی‌ها
+- صفحه جزئیات بازی
+- امکان جستجو و مرتب‌سازی (اختیاری)
+- طراحی ساده و قابل توسعه
+
+---
+
+## پیش‌نیازها
+
+- Node.js نسخه پایدار (>=18)
+- npm یا yarn
+- Next.js 13+
+
+---
+
+## نصب و اجرای پروژه
+
+۱. کلون کردن ریپو:
 
 ```bash
+git clone https://github.com/<username>/<repo-name>.git
+cd <repo-name>
+
+۲. نصب پکیج‌ها:
+
+npm install
+# یا
+yarn
+
+۳. اضافه کردن API Key در فایل .env.local:
+
+NEXT_PUBLIC_RAWG_API_KEY=کلید_API_شما
+
+توجه: .env.local در .gitignore قرار دارد و نباید روی GitHub گذاشته شود.
+
+۴. اجرای پروژه:
+
 npm run dev
-# or
+# یا
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+۵. باز کردن مرورگر:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000/games
+ساختار پروژه
+src/
+ ├─ app/
+ │   ├─ layout.tsx         # لایه اصلی پروژه
+ │   ├─ page.tsx           # صفحه اصلی
+ │   ├─ games/page.tsx     # صفحه لیست بازی‌ها
+ │   ├─ games/[id]/page.tsx # صفحه جزئیات بازی
+ ├─ lib/
+ │   └─ api.ts             # فایل کمکی برای fetch از RAWG
+ └─ ...
+نکات مهم
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+برای استفاده از RAWG API نیاز به API Key دارید.
 
-## Learn More
+Fetch داده‌ها با getServerSideProps یا fetch در Next.js انجام می‌شود.
 
-To learn more about Next.js, take a look at the following resources:
+پروژه آماده توسعه و اضافه کردن قابلیت‌های جدید مثل فیلتر و مرتب‌سازی است.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+نویسنده
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Sepehr Rahimi
 
-## Deploy on Vercel
+ایمیل: 3pehrrahimi77@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+اگر بخوای می‌تونم یه **نسخه حرفه‌ای با Badge و لینک API و تصویر پروژه** هم بسازم تا GitHub خیلی حرفه‌ای به نظر بیاد و برای پرتفولیو هم مناسب باشه.  
+
+میخوای بسازم؟
